@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capital_Internship.API", "Capital_Internship.API\Capital_Internship.API.csproj", "{7350EBD6-781D-448A-8F32-9AC84F2415BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capital_Internship.API", "Capital_Internship.API\Capital_Internship.API.csproj", "{7350EBD6-781D-448A-8F32-9AC84F2415BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capital_Internship.Domain", "Capital_Internship.Domain\Capital_Internship.Domain.csproj", "{398CFF2B-811F-4C31-A096-772A901B8BA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7350EBD6-781D-448A-8F32-9AC84F2415BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7350EBD6-781D-448A-8F32-9AC84F2415BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7350EBD6-781D-448A-8F32-9AC84F2415BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398CFF2B-811F-4C31-A096-772A901B8BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398CFF2B-811F-4C31-A096-772A901B8BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398CFF2B-811F-4C31-A096-772A901B8BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398CFF2B-811F-4C31-A096-772A901B8BA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
