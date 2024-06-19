@@ -22,6 +22,8 @@ namespace Capital_Internship.Domain.Models
         public bool HideIdNumberField { get; set; }
         public bool HideDateOfBirthField { get; set; }
         public bool HideGenderField { get; set; }
+        public Guid Program_Id { get; set; }
+        //public Program_ Program_ { get; set; }
         public List<AdditionalQuestion>? AdditionalQuestions { get; set; }
 
     }

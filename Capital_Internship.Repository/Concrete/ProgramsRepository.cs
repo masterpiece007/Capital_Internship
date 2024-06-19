@@ -3,19 +3,15 @@ using Capital_Internship.Domain.Helpers;
 using Capital_Internship.Domain.Models;
 using Capital_Internship.Repository.Abstract;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using Serilog;
 
 namespace Capital_Internship.Repository.Concrete
 {
-    public class ProgramsReository : IProgramsReository
+    public class ProgramsRepository : IProgramsRepository
     {
         private readonly AppDbContext _dbContext;
 
-        public ProgramsReository(AppDbContext dbContext)
+        public ProgramsRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -43,7 +39,7 @@ namespace Capital_Internship.Repository.Concrete
             }
             catch (Exception e)
             {
-                Log.Error($"An error occured in repo-function SubmitCandidateApplication: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
+                //Log.Error($"An error occured in repo-function SubmitCandidateApplication: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
                 return false;
             }
 
@@ -58,7 +54,7 @@ namespace Capital_Internship.Repository.Concrete
             }
             catch (Exception e)
             {
-                Log.Error($"An error occured in repo-function GetAllPrograms: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
+                //Log.Error($"An error occured in repo-function GetAllPrograms: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
                 return null;
             }
 
@@ -98,7 +94,7 @@ namespace Capital_Internship.Repository.Concrete
             }
             catch (Exception e)
             {
-                Log.Error($"An error occured in repo-function SubmitCandidateApplication: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
+                //Log.Error($"An error occured in repo-function SubmitCandidateApplication: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
                 return null;
             }
 
@@ -134,7 +130,7 @@ namespace Capital_Internship.Repository.Concrete
             }
             catch (Exception e)
             {
-                Log.Error($"An error occured in repo-function GetCandidateApplicationsByProgramId: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
+                //Log.Error($"An error occured in repo-function GetCandidateApplicationsByProgramId: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
                 return null;
             }
         }
@@ -175,7 +171,7 @@ namespace Capital_Internship.Repository.Concrete
             }
             catch (Exception e)
             {
-                Log.Error($"An error occured in repo-function EditProgramQuestion: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
+                //Log.Error($"An error occured in repo-function EditProgramQuestion: message {e.Message},inner-exception: {e.InnerException?.Message} stacktrace: {e.StackTrace}");
                 return false;
             }
         }

@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capital_Internship.API", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capital_Internship.Domain", "Capital_Internship.Domain\Capital_Internship.Domain.csproj", "{398CFF2B-811F-4C31-A096-772A901B8BA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capital_Internship.Repository", "Capital_Internship.Repository\Capital_Internship.Repository.csproj", "{C7287EE4-1AFC-4D50-ADF6-9184C81E5F69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Capital_Internship.Repository", "Capital_Internship.Repository\Capital_Internship.Repository.csproj", "{C7287EE4-1AFC-4D50-ADF6-9184C81E5F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capital_Internship.Service", "Capital_Internship.Service\Capital_Internship.Service.csproj", "{2E15F5DC-6D9D-4CA7-A099-6FDF6D695ECD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C7287EE4-1AFC-4D50-ADF6-9184C81E5F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7287EE4-1AFC-4D50-ADF6-9184C81E5F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7287EE4-1AFC-4D50-ADF6-9184C81E5F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E15F5DC-6D9D-4CA7-A099-6FDF6D695ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E15F5DC-6D9D-4CA7-A099-6FDF6D695ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E15F5DC-6D9D-4CA7-A099-6FDF6D695ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E15F5DC-6D9D-4CA7-A099-6FDF6D695ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

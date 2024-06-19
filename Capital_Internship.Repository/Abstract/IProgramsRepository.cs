@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capital_Internship.Repository.Abstract
 {
-    public interface IProgramsReository
+    public interface IProgramsRepository
     {
         Task<bool> CreateProgramAndApplication(Program_ product);
         Task<Program_> GetFullProgramDetails(Guid programId);
