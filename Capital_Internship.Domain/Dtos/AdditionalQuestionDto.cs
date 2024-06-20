@@ -14,6 +14,8 @@ namespace Capital_Internship.Domain.Dtos
         public ReplyFormat ReplyFormat { get; set; }
         public string QuestionBody { get; set; }
         public int MaxNoOfChoiceAllowed { get; set; } = 1;
+        public bool EnableOthersOption { get; set; } = false;
+
 
         // 1 to Many relationship with QuestionChoice
         public List<QuestionChoiceDto> QuestionChoices_ { get; set; }
@@ -24,12 +26,18 @@ namespace Capital_Internship.Domain.Dtos
             {
                 QuestionBody = QuestionBody,
                 ReplyFormat = ReplyFormat,
-                MaxNoOfChoiceAllowed = MaxNoOfChoiceAllowed,
+                MaxNoOfChoiceAllowed = (ReplyFormat != ReplyFormat.MultipleChoice && ReplyFormat != ReplyFormat.Dropdown) ? 1 :  MaxNoOfChoiceAllowed,
             };
             if ((ReplyFormat == ReplyFormat.MultipleChoice || ReplyFormat == ReplyFormat.Dropdown) && QuestionChoices_.Count >= 0)
             {
                 var listOfChoices = new List<QuestionChoice>();
                 QuestionChoices_.ForEach(a => listOfChoices.Add(a.MapToQuestionChoice()));
+
+                if (ReplyFormat == ReplyFormat.Dropdown && EnableOthersOption)
+                {
+                    listOfChoices.Add(new QuestionChoice { AdditionalQuestionId = question.Id, Value = "Others" });
+                }
+
                 question.QuestionChoices.AddRange(listOfChoices);
             }
             return question;
@@ -56,6 +64,7 @@ namespace Capital_Internship.Domain.Dtos
         public string QuestionBody { get; set; }
         public Guid ProgramId { get; set; }
         public int MaxNoOfChoiceAllowed { get; set; } = 1;
+        public bool EnableOthersOption { get; set; } = false;
 
         // 1 to Many relationship with QuestionChoice
         public List<QuestionChoiceDto> QuestionChoices { get; set; }

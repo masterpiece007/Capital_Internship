@@ -145,7 +145,7 @@ namespace Capital_Internship.Repository.Concrete
 
                 var additionalQuestionEntry = _dbContext.AdditionalQuestions.Entry(additionalQuestionToUpdate);
                 await additionalQuestionEntry.Collection(x => x.QuestionChoices).LoadAsync();
-                if (dto.ReplyFormat == ReplyFormat.MultipleChoice)
+                if (dto.ReplyFormat == ReplyFormat.MultipleChoice || dto.ReplyFormat == ReplyFormat.Dropdown)
                 {
                     if (additionalQuestionToUpdate.QuestionChoices.Count > 0)
                     {
@@ -155,7 +155,14 @@ namespace Capital_Internship.Repository.Concrete
 
                         //create new entries
                         var listOfQuestionChoices = dto.QuestionChoices.Select(a => new QuestionChoice { AdditionalQuestionId = additionalQuestionId, Value = a.Value });
-                        _dbContext.AddRange(listOfQuestionChoices);
+                        var ChoicesList = listOfQuestionChoices.ToList();
+                        if (dto.ReplyFormat == ReplyFormat.Dropdown && dto.EnableOthersOption && !ChoicesList.Any(a => a.Value == "Others"))
+                        {
+                            ChoicesList.Add(new QuestionChoice { AdditionalQuestionId = additionalQuestionId, Value = "Others" });
+                        }
+                        //listOfQuestionChoices.ToList().Add(new QuestionChoice { AdditionalQuestionId = additionalQuestionId, Value = "Others" });
+                        //_dbContext.AddRange(listOfQuestionChoices);
+                        _dbContext.AddRange(ChoicesList);
                     }
                 }
                 additionalQuestionToUpdate.QuestionBody = dto.QuestionBody;
@@ -166,6 +173,7 @@ namespace Capital_Internship.Repository.Concrete
                 var rowsModified = await _dbContext.SaveChangesAsync();
                 if (rowsModified <= 0)
                     return false;
+
 
                 return true;
             }
